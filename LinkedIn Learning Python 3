@@ -1,0 +1,22 @@
+#Checking for all the primes up to the squareroot of a value
+import math
+def allPrimesUpTo(num):
+    numList = []
+    finalNum = int(math.sqrt(num))
+    primeList=[]
+    for i in range(1,finalNum+1):
+        numList.append(i)
+    print(numList)
+    for z in numList:
+        print(z)
+        count = 0
+        for j in range(len(numList)):
+            if z % numList[j] ==0:
+                count+=1 
+        if count <= 2:
+            primeList.append(z)
+    print(primeList)
+        
+        
+                
+allPrimesUpTo(10000)
