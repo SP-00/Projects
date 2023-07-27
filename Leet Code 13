@@ -1,0 +1,21 @@
+class Solution(object):
+    def romanToInt(self, s):
+
+        number = 0
+        letter_count = 0
+        current_letter = "I"
+        roman_numerals= {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+        ##roman_numerals = {"1": ["I", 1], "2" : ["V", 5], "3": ["X", 10], "4"["L",50], "5": ["C", 100], "6": ["D",500], "7": ["M", 1000]}
+        for i in range(len(s)):
+            print(i)
+            try:
+                next_value = s[i+1]
+
+                if roman_numerals[s[i]] < roman_numerals[s[i +1]]:
+                    number = number - roman_numerals[s[i]]
+                else:
+                    number = number + roman_numerals[s[i]]
+                print(number)
+            except IndexError:
+                number = number + roman_numerals[s[i]]    
+        return(number)
