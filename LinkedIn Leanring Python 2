@@ -1,0 +1,31 @@
+string1 = "ABA"
+
+def encodeString(stringVal):
+    stringVal = stringVal + " "
+    same = stringVal[0]
+    count = 0
+    letterList =[]
+    for i in stringVal:
+        if i == same:
+            count+=1
+        else:
+            tuple= (same,count)
+            letterList.append(tuple)
+            del tuple
+          #  print(letterList)
+            same = i
+            count = 1
+
+    return(letterList)
+    
+listToDecode = encodeString(string1)
+print(listToDecode)
+    
+def decodeString(encodedList):
+    s1 = ""
+    for i in encodedList:
+        num = i[1]
+        s1 +=i[0]*num
+    return(s1)
+print(decodeString(listToDecode))
+    
