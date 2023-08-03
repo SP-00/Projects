@@ -1,0 +1,18 @@
+ef canConstruct(self, ransomNote, magazine):
+        listRN = []
+        listM = []
+        check =""
+        for i in ransomNote:
+            listRN.append(i)
+        for j in magazine:
+            listM.append(j)
+        for z in listRN:
+            print(z)
+            if z in listM:
+                check +=z
+                listM.remove(z)
+        print(check)
+        if check == ransomNote:
+            return True
+        else:
+            return False
